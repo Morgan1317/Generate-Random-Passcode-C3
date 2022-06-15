@@ -21,9 +21,7 @@ function getLength(){
     promptLength = window.prompt("Please enter a number between 8 and 128");
     passwordLength = parseInt(promptLength);
   }
-  
-}
-
+};
 // generates a random letter that is lowercase
 function genRandomLetter(){
   var ranLetter = "qwertyuiopasdfghjklzxcvbnm";
