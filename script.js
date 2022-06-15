@@ -58,42 +58,31 @@ function generatePassword(){
       if (promptLower && passwordArray.length < passwordLength){
         low = genRandomLetter();
         passwordArray.push(low);
-      } else {
-        // move to next condition
       }
     
       if (promptUpper && passwordArray.length < passwordLength){
         letter = genRandomLetter();
         upper = letter.toUpperCase();
         passwordArray.push(upper);
-      } else {
-        // move to next condition
-      }
+      } 
     
       if(promptNumber && passwordArray.length < passwordLength){
         number = genRandomNumber();
         passwordArray.push(number);
-      } else{
-      // move to next condition
-      }
-    
+      } 
+
       if(promptSpecial && passwordArray.length < passwordLength){
         spec = randomSpecial();
         passwordArray.push(spec);
-      } else if (promptUpper === false && promptLower === false && promptNumber === false && promptSpecial === false){
+      } 
+      
+      if (promptUpper === false && promptLower === false && promptNumber === false && promptSpecial === false){
         window.alert("Please select at least one type of character");
         promptLower = confirm("Would you like the password to contain lowercase letters?");
         promptUpper = confirm("Would you like the password to contain uppercase letters?");
         promptNumber = confirm("Would you like the password to contain Numbers?");
         promptSpecial = confirm("Would you like the password to contain special characters?");
-      // }else if (passwordArray.length === passwordLength){
-      //   passwordArray.length = passwordLength; 
-      //   break; 
-      } else {
-        // move to next condition
-      }
-      
-  
+      } 
     };
     
     // utilize the fisher yates method of shuffle to further ensure the output of the array is in a random order, and not following the pattern of Lower Upper Number Special depending on which were selected
